@@ -84,13 +84,13 @@
   //#define SCARA_FEEDRATE_SCALING
 
   // Length of inner and outer support arms. Measure arm lengths precisely.
-  #define SCARA_LINKAGE_1  98.0    // (mm)
-  #define SCARA_LINKAGE_2  98.0    // (mm)
+  #define SCARA_LINKAGE_1  150    // (mm)
+  #define SCARA_LINKAGE_2  150    // (mm)
   
   // SCARA tower offset (position of Tower relative to bed zero position)
   // This needs to be reasonably accurate as it defines the printbed position in the SCARA space.
   #define SCARA_OFFSET_X     0       // (mm)
-  #define SCARA_OFFSET_Y     -110     // (mm)
+  #define SCARA_OFFSET_Y     -160     // (mm)
 
 #endif
 
@@ -202,7 +202,7 @@
 
 // Choose the name from boards.h that matches your setup
 #ifndef MOTHERBOARD
-  #define MOTHERBOARD BOARD_SANGUINOLOLU_12
+  #define MOTHERBOARD BOARD_RAMPS_13_EFB
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
@@ -480,7 +480,7 @@
  *   998 : Dummy Table that ALWAYS reads 25°C or the temperature defined below.
  *   999 : Dummy Table that ALWAYS reads 100°C or the temperature defined below.
  */
-#define TEMP_SENSOR_0 1
+#define TEMP_SENSOR_0 998
 #define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
@@ -488,7 +488,7 @@
 #define TEMP_SENSOR_5 0
 #define TEMP_SENSOR_6 0
 #define TEMP_SENSOR_7 0
-#define TEMP_SENSOR_BED 0
+#define TEMP_SENSOR_BED 999
 #define TEMP_SENSOR_PROBE 0
 #define TEMP_SENSOR_CHAMBER 0
 
@@ -728,9 +728,9 @@
  *          TMC5130, TMC5130_STANDALONE, TMC5160, TMC5160_STANDALONE
  * :['A4988', 'A5984', 'DRV8825', 'LV8729', 'L6470', 'L6474', 'POWERSTEP01', 'TB6560', 'TB6600', 'TMC2100', 'TMC2130', 'TMC2130_STANDALONE', 'TMC2160', 'TMC2160_STANDALONE', 'TMC2208', 'TMC2208_STANDALONE', 'TMC2209', 'TMC2209_STANDALONE', 'TMC26X', 'TMC26X_STANDALONE', 'TMC2660', 'TMC2660_STANDALONE', 'TMC5130', 'TMC5130_STANDALONE', 'TMC5160', 'TMC5160_STANDALONE']
  */
-#define X_DRIVER_TYPE  LV8729
-#define Y_DRIVER_TYPE  LV8729
-#define Z_DRIVER_TYPE  A4988
+#define X_DRIVER_TYPE  A4982
+#define Y_DRIVER_TYPE  A4982
+#define Z_DRIVER_TYPE  A4982
 //#define X2_DRIVER_TYPE A4988
 //#define Y2_DRIVER_TYPE A4988
 //#define Z2_DRIVER_TYPE A4988
@@ -796,7 +796,7 @@
  * Z - uses 400 steps/mm for moving Z (with 16 microsteps)
  * E - adjust according to your extruder (93 is for MK8 extruder)
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 26.6667, 80, 400, 93 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 40, 40, 78.35, 93 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -1124,7 +1124,7 @@
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
 #define INVERT_X_DIR false
 #define INVERT_Y_DIR true
-#define INVERT_Z_DIR false
+#define INVERT_Z_DIR true
 
 // @section extruder
 
@@ -1158,8 +1158,8 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 240
-#define Y_BED_SIZE 80
+#define X_BED_SIZE 300
+#define Y_BED_SIZE 150
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS -120
