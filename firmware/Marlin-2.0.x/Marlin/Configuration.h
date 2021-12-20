@@ -696,16 +696,16 @@
 #define USE_ZMAX_PLUG
 
 // Enable pullup for all endstops to prevent a floating state
-//#define ENDSTOPPULLUPS
+#define ENDSTOPPULLUPS
 #if DISABLED(ENDSTOPPULLUPS)
   // Disable ENDSTOPPULLUPS to set pullups individually
   //#define ENDSTOPPULLUP_XMAX
   //#define ENDSTOPPULLUP_YMAX
   //#define ENDSTOPPULLUP_ZMAX  // open pin, inverted
-  #define ENDSTOPPULLUP_XMIN  // open pin, inverted
-  #define ENDSTOPPULLUP_YMIN  // open pin, inverted
+  //#define ENDSTOPPULLUP_XMIN  // open pin, inverted
+  //#define ENDSTOPPULLUP_YMIN  // open pin, inverted
   #define ENDSTOPPULLUP_ZMIN
-  //#define ENDSTOPPULLUP_ZMIN_PROBE
+  #define ENDSTOPPULLUP_ZMIN_PROBE
 #endif
 
 // Enable pulldown for all endstops to prevent a floating state
